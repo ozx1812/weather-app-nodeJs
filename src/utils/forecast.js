@@ -12,7 +12,8 @@ const forecast = (location, callback) => {
         json:true,
         headers: {
           'x-rapidapi-host': 'community-open-weather-map.p.rapidapi.com',
-          'x-rapidapi-key': '1be88f46abmsh3b6959a84e99f0bp192397jsn28bb4ed48eab',
+          // 'x-rapidapi-key': '1be88f46abmsh3b6959a84e99f0bp192397jsn28bb4ed48eab',// omij
+          'x-rapidapi-key': '1d8731ba02msh165cf0a958edb15p19a970jsn88f4ffe82c00', // rakesh
           useQueryString: true
         }
       };
