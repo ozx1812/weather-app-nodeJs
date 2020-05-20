@@ -27,7 +27,7 @@ const forecast = (location, callback) => {
             callback(undefined, body)
         }
     
-        console.log(body);
+        // console.log(body);
         return body;
     })
 }
