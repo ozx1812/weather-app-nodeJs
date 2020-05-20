@@ -32,17 +32,16 @@ weatherLocation.addEventListener('submit', (e) => {
 
     
     locationMessage.textContent = 'Loading...'
-    forecastMessage.textContent = '';
+    // forecastMessage.textContent = '';
     fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 console.log(data.error);
                 locationMessage.textContent = 'Unable to find Location!';
             } else {
-                console.log(data);
+                // console.log(data);
                 console.log( data.forecast.weather[0].description);
-                forecastMessage.textContent = data.forecast.weather[0].description;
-                locationMessage.textContent = data.address;
+                locationMessage.textContent = 'Location is ' + data.address;
                 
                 console.log(data.forecast);
 
@@ -58,13 +57,13 @@ weatherLocation.addEventListener('submit', (e) => {
                 // const temp_min = wData.main.temp_min;
                 // const temp_max = wData.main.temp_max;
                 const wind_speed = wData.wind.speed;
-                const cloudiness = wData.clouds.all;
+                const cloudiness = wData.weather[0].description;
     
                 wind_speed_text.textContent = wind_speed + ' m/s';
-                cloudiness_text.textContent = cloudiness + ' %';
+                cloudiness_text.textContent = cloudiness ;
                 pressure_text.textContent = pressure + ' hpa';
                 humidity_text.textContent = humidity + ' %';
-                geo_cords_text.textContent = '{ lat: '+ cord_lat + ', lon: '+ cord_lon + ' }';
+                geo_cords_text.textContent = ' latitude : '+ cord_lat + ', longitude : '+ cord_lon + ' ';
                 
             }
         })
